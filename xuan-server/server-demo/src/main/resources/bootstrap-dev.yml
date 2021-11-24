@@ -1,0 +1,54 @@
+#当前服务端口号
+server:
+  port: 18014
+# Spring
+spring:
+  application:
+    # 应用名称
+    name: server-demo
+  cloud:
+    nacos:
+      discovery:
+        username: nacos
+        password: nacos
+        # 服务注册地址
+        server-addr: "http://120.26.88.214:8848"
+        namespace: 44b4bdb9-41ce-4fba-b7db-04fd141b70c2
+        group: DEV_GROUP
+      config:
+        username: nacos
+        password: nacos
+        # 配置中心地址
+        server-addr: "http://120.26.88.214:8848"
+        # 配置文件格式
+        file-extension: yaml
+        # 共享配置
+        namespace: 0c031903-7668-4e82-b5a7-9f2fcffde4d1
+        group: DEV_GROUP
+        # 支持多个共享 Data Id 的配置，优先级小于extension-configs,自定义 Data Id 配置 属性是个集合，内部由 Config POJO 组成。Config 有 3 个属性，分别是 dataId, group 以及 refresh
+        ext-config:
+          - data-id: mysql-common.yaml
+            group: DEV_GROUP
+            refresh: true
+          - data-id: net-redis.yaml
+            group: DEV_GROUP
+            refresh: true
+
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+  main:
+    allow-bean-definition-overriding: true
+
+
+#knife4j:
+#  # 开启增强配置
+#  enable: true
+#  basic:
+#    enable: true
+#    # Basic认证用户名
+#    username: HdkjSjzc
+#    # Basic认证密码
+#    password: Hdkj_2020!@#
