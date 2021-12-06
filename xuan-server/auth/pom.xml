@@ -56,10 +56,10 @@
         </dependency>
 
         <!-- sleuth+zipkin -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!-- sentinel -->
         <dependency>

@@ -1,11 +1,11 @@
 #当前服务端口号
 server:
-  port: 18014
+  port: 18002
 # Spring
 spring:
   application:
     # 应用名称
-    name: server-demo
+    name: auth
   cloud:
     nacos:
       discovery:
@@ -52,15 +52,3 @@ knife4j:
     username: admin
     # Basic认证密码
     password: admin
-
-
-#swagger:
-#  enable: true  #swagger接口网站开启配置
-#  basePackage: com.glx #基础扫描包范围
-#  serviceUrl: http://localhost:${server.port}/doc.html  #服务器接口文档访问地址
-#  contact: gzp #联系人邮箱
-#  title: a  #接口文档标题
-#  version: v1.1  #接口文档版本
-#  description: 接口  #接口文档描述
-
-

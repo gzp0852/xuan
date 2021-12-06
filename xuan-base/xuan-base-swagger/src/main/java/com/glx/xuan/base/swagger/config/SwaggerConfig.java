@@ -44,7 +44,7 @@ public class SwaggerConfig {
                 .apiInfo(groupApiInfo())
                 .select()
                 // 指定当前包路径
-                .apis(RequestHandlerSelectors.basePackage("com.hdkj.sjzc")
+                .apis(RequestHandlerSelectors.basePackage("com.glx.xuan")
                 )
                 // 扫描所有
                 .paths(PathSelectors.any())
