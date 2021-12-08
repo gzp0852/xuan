@@ -16,7 +16,6 @@
         <module>xuan-base-redis</module>
         <module>xuan-base-mysql</module>
         <module>xuan-base-common</module>
-        <module>xuan-base-common</module>
         <module>xuan-base-api</module>
         <module>xuan-base-swagger</module>
         <module>xuan-base-feign</module>

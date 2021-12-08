@@ -8,12 +8,7 @@
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <groupId>com.glx.xuan</groupId>
     <artifactId>server-demo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>server-demo</name>
-    <description>server-demo</description>
-
     <packaging>jar</packaging>
 
     <properties>
@@ -57,6 +52,12 @@
         <dependency>
             <groupId>com.glx.xuan</groupId>
             <artifactId>xuan-base-feign</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.glx.xuan</groupId>
+            <artifactId>server-demo-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

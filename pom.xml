@@ -90,11 +90,11 @@
                 <artifactId>mybatis-plus-generator</artifactId>
                 <version>${mybatis-plus-generator.version}</version>
             </dependency>
-            <dependency>
+            <!--<dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <optional>true</optional>
-            </dependency>
+            </dependency>-->
             <!-- 代码生成器模板 -->
             <dependency>
                 <groupId>org.freemarker</groupId>
