@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+        xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+        xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC"
+        xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0"
+        xmlns:flowable="http://flowable.org/bpmn"
+        xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.flowable.org/processdef">
+  <process id="process_multi001" name="动态会或签" flowable:processCategory="leave">
+    <startEvent id="startNode1" name="开始">
+      <outgoing>Flow_0lizcn3</outgoing>
+    </startEvent>
+    <userTask id="Activity_19or0va" name="发起人"  flowable:assignee="100">
+      <incoming>Flow_0lizcn3</incoming>
+      <outgoing>Flow_1tttkqp</outgoing>
+    </userTask>
+    <userTask id="Activity_03hbswb" name="审批人1" flowable:assignee="100">
+      <incoming>Flow_1tttkqp</incoming>
+      <outgoing>Flow_0qsm1do</outgoing>
+    </userTask>
+    <userTask id="Activity_1eq8p0t" name="会签节点" flowable:assignee="${ass}">
+      <incoming>Flow_0qsm1do</incoming>
+      <outgoing>Flow_1d2t54q</outgoing>
+      <multiInstanceLoopCharacteristics isSequential="true" flowable:collection="assList" flowable:elementVariable="ass" />
+    </userTask>
+    <sequenceFlow id="Flow_0lizcn3" sourceRef="startNode1" targetRef="Activity_19or0va" />
+    <sequenceFlow id="Flow_1tttkqp" sourceRef="Activity_19or0va" targetRef="Activity_03hbswb" />
+    <sequenceFlow id="Flow_0qsm1do" sourceRef="Activity_03hbswb" targetRef="Activity_1eq8p0t" />
+    <userTask id="Activity_0ik12zl" name="或签节点" flowable:assignee="${ass}">
+      <incoming>Flow_1d2t54q</incoming>
+      <outgoing>Flow_06b07jj</outgoing>
+      <multiInstanceLoopCharacteristics flowable:collection="assList" flowable:elementVariable="ass" />
+    </userTask>
+    <sequenceFlow id="Flow_1d2t54q" sourceRef="Activity_1eq8p0t" targetRef="Activity_0ik12zl" />
+    <userTask id="Activity_18l2xwy" name="会签节点2" flowable:assignee="${ass}">
+      <incoming>Flow_06b07jj</incoming>
+      <outgoing>Flow_0ubeg5j</outgoing>
+      <multiInstanceLoopCharacteristics isSequential="true" flowable:collection="assList" flowable:elementVariable="ass" />
+    </userTask>
+    <sequenceFlow id="Flow_06b07jj" sourceRef="Activity_0ik12zl" targetRef="Activity_18l2xwy" />
+    <endEvent id="Event_0ip16l1">
+      <incoming>Flow_0ubeg5j</incoming>
+    </endEvent>
+    <sequenceFlow id="Flow_0ubeg5j" sourceRef="Activity_18l2xwy" targetRef="Event_0ip16l1" />
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_flow">
+    <bpmndi:BPMNPlane id="BPMNPlane_flow" bpmnElement="process_vsy4m2mc">
+      <bpmndi:BPMNEdge id="Flow_0ubeg5j_di" bpmnElement="Flow_0ubeg5j">
+        <di:waypoint x="460" y="370" />
+        <di:waypoint x="460" y="412" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06b07jj_di" bpmnElement="Flow_06b07jj">
+        <di:waypoint x="460" y="220" />
+        <di:waypoint x="460" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1d2t54q_di" bpmnElement="Flow_1d2t54q">
+        <di:waypoint x="460" y="90" />
+        <di:waypoint x="460" y="140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0qsm1do_di" bpmnElement="Flow_0qsm1do">
+        <di:waypoint x="310" y="50" />
+        <di:waypoint x="410" y="50" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1tttkqp_di" bpmnElement="Flow_1tttkqp">
+        <di:waypoint x="100" y="50" />
+        <di:waypoint x="210" y="50" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0lizcn3_di" bpmnElement="Flow_0lizcn3">
+        <di:waypoint x="-105" y="50" />
+        <di:waypoint x="0" y="50" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BPMNShape_startNode1" bpmnElement="startNode1" bioc:stroke="">
+        <omgdc:Bounds x="-135" y="35" width="30" height="30" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="-132" y="72" width="22" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1gvbqcy_di" bpmnElement="Activity_19or0va">
+        <omgdc:Bounds x="0" y="10" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0x0sqo3_di" bpmnElement="Activity_03hbswb">
+        <omgdc:Bounds x="210" y="10" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_01eelzh_di" bpmnElement="Activity_1eq8p0t">
+        <omgdc:Bounds x="410" y="10" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1rn6up8_di" bpmnElement="Activity_0ik12zl">
+        <omgdc:Bounds x="410" y="140" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0bwjavh_di" bpmnElement="Activity_18l2xwy">
+        <omgdc:Bounds x="410" y="290" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0ip16l1_di" bpmnElement="Event_0ip16l1">
+        <omgdc:Bounds x="442" y="412" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
+
+
+

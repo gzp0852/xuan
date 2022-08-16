@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions
+        xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+        xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC"
+        xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0"
+        xmlns:flowable="http://flowable.org/bpmn"
+        xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.flowable.org/processdef">
+    <process id="process_cb41msyl" name="name_5mdfovwa">
+        <startEvent id="startNode1" name="开始">
+            <outgoing>Flow_0dbxujs</outgoing>
+        </startEvent>
+        <sequenceFlow id="Flow_0dbxujs" sourceRef="startNode1" targetRef="Activity_0tzmoyc" />
+        <endEvent id="Event_1imfb4w">
+            <incoming>Flow_1bb01p9</incoming>
+        </endEvent>
+        <sequenceFlow id="Flow_1bb01p9" sourceRef="Activity_0tzmoyc" targetRef="Event_1imfb4w" />
+        <userTask id="Activity_0tzmoyc" name="asdsad" flowable:dataType="dynamic" flowable:assignee="${assignee}">
+            <incoming>Flow_1d2t54q</incoming>
+            <outgoing>Flow_06b07jj</outgoing>
+            <multiInstanceLoopCharacteristics flowable:collection="assigneeList" flowable:elementVariable="assignee">
+                <completionCondition>${nrOfCompletedInstances&gt;0}</completionCondition>
+            </multiInstanceLoopCharacteristics>
+        </userTask>
+    </process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_flow">
+        <bpmndi:BPMNPlane id="BPMNPlane_flow" bpmnElement="process_cb41msyl">
+            <bpmndi:BPMNEdge id="Flow_0dbxujs_di" bpmnElement="Flow_0dbxujs">
+                <di:waypoint x="-145" y="100" />
+                <di:waypoint x="-80" y="100" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="Flow_1bb01p9_di" bpmnElement="Flow_1bb01p9">
+                <di:waypoint x="20" y="100" />
+                <di:waypoint x="102" y="100" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNShape id="BPMNShape_startNode1" bpmnElement="startNode1" bioc:stroke="">
+                <omgdc:Bounds x="-175" y="85" width="30" height="30" />
+                <bpmndi:BPMNLabel>
+                    <omgdc:Bounds x="-172" y="122" width="22" height="14" />
+                </bpmndi:BPMNLabel>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="Event_1imfb4w_di" bpmnElement="Event_1imfb4w">
+                <omgdc:Bounds x="102" y="82" width="36" height="36" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="Activity_0ohond8_di" bpmnElement="Activity_0tzmoyc">
+                <omgdc:Bounds x="-80" y="60" width="100" height="80" />
+            </bpmndi:BPMNShape>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</definitions>
+
+         
