@@ -16,6 +16,7 @@
         <module>server-demo-api</module>
         <module>server-demo</module>
         <module>auth</module>
+        <module>server-flowable</module>
     </modules>
 
 

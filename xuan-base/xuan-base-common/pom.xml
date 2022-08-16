@@ -87,11 +87,11 @@
         </dependency>
 
         <!-- 国密算法组件 -->
-        <dependency>
+       <!-- <dependency>
             <groupId>com.sgcc.uap</groupId>
             <artifactId>SGSM</artifactId>
             <version>0.0.1</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>
