@@ -1,10 +1,11 @@
+#当前服务端口号
 server:
-  port: 18001
+  port: 18021
 # Spring
 spring:
   application:
-    #应用名称
-    name: net-gateway
+    # 应用名称
+    name: server-demo
   cloud:
     nacos:
       discovery:
@@ -29,6 +30,9 @@ spring:
           - data-id: mysql-common.yaml
             group: DEV_GROUP
             refresh: true
+          - data-id: net-redis.yaml
+            group: DEV_GROUP
+            refresh: true
 
   http:
     encoding:
@@ -38,12 +42,25 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
-#knife4j:
-#  # 开启增强配置
-#  enable: true
-#  basic:
-#    enable: true
-#    # Basic认证用户名
-#    username: HdkjSjzc
-#    # Basic认证密码
-#    password: Hdkj_2020!@#
+
+knife4j:
+  # 开启增强配置
+  enable: true
+  basic:
+    enable: true
+    # Basic认证用户名
+    username: admin
+    # Basic认证密码
+    password: admin
+
+
+#swagger:
+#  enable: true  #swagger接口网站开启配置
+#  basePackage: com.glx #基础扫描包范围
+#  serviceUrl: http://localhost:${server.port}/doc.html  #服务器接口文档访问地址
+#  contact: gzp #联系人邮箱
+#  title: a  #接口文档标题
+#  version: v1.1  #接口文档版本
+#  description: 接口  #接口文档描述
+
+
