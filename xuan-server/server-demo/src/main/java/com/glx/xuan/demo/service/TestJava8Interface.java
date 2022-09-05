@@ -23,7 +23,7 @@ class TestJava8 {
 
     public static TestJava8Interface testB() {
         return stra -> {
-            return stra+"aaa";
+            return stra+"aaab";
         };
     }
 
